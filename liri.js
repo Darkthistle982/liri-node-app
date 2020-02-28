@@ -13,9 +13,9 @@ const userCommand = process.argv[2];
 const userParameter = process.argv[3];
 
 //append function to write the command used and the generated error if any to the log.txt file
-// fs.appendFile('log.txt', userCommand + ",", function (err) {
-//     if (err) {
-//         console.log(err);
+// fs.appendFile('log.txt', userCommand + ",", function (error) {
+//     if (error) {
+//         console.log(error);
 //     }
 // });
 
@@ -26,6 +26,9 @@ switch (userCommand) {
         break;
     case "concert-this":
         concertThis(userParameter);
+        break;
+    case "movie-this":
+        movieThis(userParameter);
         break;
 };
 
@@ -84,6 +87,7 @@ function concertThis(artist) {
     axios.get("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp")
         .then(function (response) {
             if (response !== undefined) {
+                console.log(artist + "'s next 5 shows.");
                 for (let i = 0; i < 5; i++) {
                     let eventDate = moment(response.data[i].datetime);
                     let conversion = eventDate.format("dddd, MMMM Do YYYY");
