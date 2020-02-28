@@ -54,7 +54,6 @@ function spotifyThisSong(song) {
         .catch(function (err) {
             console.log(err);
         });
-
 };
 
 //function to run if the spotify search has no results
@@ -86,7 +85,7 @@ function spotifyErrorSearch() {
 function concertThis(artist) {
     axios.get("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp")
         .then(function (response) {
-            if (response !== undefined) {
+            if (response.data[0] !== undefined) {
                 console.log(artist + "'s next 5 shows.");
                 for (let i = 0; i < 5; i++) {
                     let eventDate = moment(response.data[i].datetime);
@@ -95,7 +94,7 @@ function concertThis(artist) {
     `
     ------------------------------------------------------
     Name of the Venue: ${response.data[i].venue.name}
-    Venue Location: ${response.data[i].venue.city}, ${response.data[0].venue.region}, ${response.data[0].venue.country}
+    Venue Location: ${response.data[i].venue.city}, ${response.data[i].venue.region}, ${response.data[i].venue.country}
     Date of the Event: ${conversion}
     ------------------------------------------------------
     `
@@ -110,3 +109,5 @@ function concertThis(artist) {
             console.log("An error occurred.")
         });
 };
+
+//function to ping OMDB for the movie-this command
