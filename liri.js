@@ -5,6 +5,7 @@ const keys = require("./keys.js");
 const Spotify = require("node-spotify-api");
 const axios = require("axios");
 const fs = require("fs");
+const moment = require("moment");
 //part of the spotify call to keep my api keys from being posted to github publicly using gitingnore files
 const spotify = new Spotify(keys.spotify);
 //calls to identify the user command input at the user parameter input for each task
@@ -79,6 +80,29 @@ function spotifyErrorSearch() {
 };
 
 //function to run the concert-this command
-function concertThis() {
-
-}
+function concertThis(artist) {
+    axios.get("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp")
+        .then(function (response) {
+            if (response !== undefined) {
+                for (let i = 0; i < 5; i++) {
+                    let eventDate = moment(response.data[i].datetime);
+                    let conversion = eventDate.format("dddd, MMMM Do YYYY");
+                    console.log(
+    `
+    ------------------------------------------------------
+    Name of the Venue: ${response.data[i].venue.name}
+    Venue Location: ${response.data[i].venue.city}, ${response.data[0].venue.region}, ${response.data[0].venue.country}
+    Date of the Event: ${conversion}
+    ------------------------------------------------------
+    `
+                    )
+                }
+            } else {
+                console.log("No concerts found");
+            }
+        })
+        .catch(function (error) {
+            console.log(error);
+            console.log("An error occurred.")
+        });
+};
