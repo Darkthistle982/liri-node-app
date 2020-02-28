@@ -106,8 +106,35 @@ function concertThis(artist) {
         })
         .catch(function (error) {
             console.log(error);
-            console.log("An error occurred.")
+            console.log("An error occurred.");
         });
 };
 
 //function to ping OMDB for the movie-this command
+function movieThis (movie) {
+    axios.get("http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy")
+        .then(function (response) {
+            if (response.data !== undefined) {
+                console.log(
+    `
+    ================================================
+    Title: ${response.data.Title}
+    Year Released: ${response.data.Year}
+    IMDB Rating: ${response.data.Ratings[0].Value}
+    Rotten Tomatoes Rating: ${response.data.Ratings[1].Value}
+    Produced in: ${response.data.Country}
+    Film Language: ${response.data.Language}
+    Plot: ${response.data.Plot}
+    Actors: ${response.data.Actors}
+    =================================================
+    `
+                )
+            } else {
+                movieThis("Mr. Nobody");
+            }
+        })
+        .catch(function (error) {
+            console.log(error);
+            console.log("An error occurred.");
+        })
+}
