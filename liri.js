@@ -114,7 +114,7 @@ function concertThis(artist) {
 function movieThis (movie) {
     axios.get("http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy")
         .then(function (response) {
-            if (response.data !== undefined) {
+            if (response.data.Title !== undefined) {
                 console.log(
     `
     ================================================
@@ -130,6 +130,7 @@ function movieThis (movie) {
     `
                 )
             } else {
+                console.log("Could not find that film. May I suggest something?");
                 movieThis("Mr. Nobody");
             }
         })
