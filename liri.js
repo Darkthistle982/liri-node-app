@@ -13,7 +13,7 @@ const userCommand = process.argv[2];
 const userParameter = process.argv[3];
 
 //append function to write the command used and the generated error if any to the log.txt file
-fs.appendFile('log.txt', userCommand + ",", function (error) {
+fs.appendFile('log.txt', userCommand + ", ", function (error) {
     if (error) {
         console.log(error);
     }
