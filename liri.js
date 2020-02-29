@@ -30,6 +30,8 @@ switch (userCommand) {
     case "movie-this":
         movieThis(userParameter);
         break;
+    case "do-what-it-says":
+        doWhatItSays();
 };
 
 //function to run a spotify search for a song and it's relevant info
@@ -137,5 +139,18 @@ function movieThis (movie) {
         .catch(function (error) {
             console.log(error);
             console.log("An error occurred.");
-        })
-}
+        });
+};
+
+//function for the do-what-it-says action
+function doWhatItSays () {
+    fs.readFile("random.txt", "utf8", function(error, data) {
+        let dataArray = data.split(",");
+        if (error) {
+            return console.log(error);
+        }
+        if (dataArray[0] === "spotify-this-song") {
+            spotifyThisSong(dataArray[1]);
+        }
+    });
+};
