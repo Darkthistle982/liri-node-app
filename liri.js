@@ -44,12 +44,12 @@ function spotifyThisSong(song) {
                 spotifyErrorSearch();
             } else {
                 console.log(
-                    `
-                    Artist: ${response.tracks.items[0].artists[0].name}
-                    Song Name: ${response.tracks.items[0].name}
-                    Preview Link: ${response.tracks.items[0].preview_url}
-                    Album: ${response.tracks.items[0].album.name}
-                    `
+    `
+    Artist: ${response.tracks.items[0].artists[0].name}
+    Song Name: ${response.tracks.items[0].name}
+    Preview Link: ${response.tracks.items[0].preview_url}
+    Album: ${response.tracks.items[0].album.name}
+    `
                 );
             }
         })
@@ -66,12 +66,12 @@ function spotifyErrorSearch() {
             for (let i = 0; i < response.tracks.items.length; i++) {
                 if (response.tracks.items[i].artists[0].name === "Ace of Base") {
                     console.log(
-                        `
-                        Artist: ${response.tracks.items[0].artists[0].name}
-                        Song Name: ${response.tracks.items[0].name}
-                        Preview Link: ${response.tracks.items[0].preview_url}
-                        Album: ${response.tracks.items[0].album.name}
-                        `
+    `
+    Artist: ${response.tracks.items[0].artists[0].name}
+    Song Name: ${response.tracks.items[0].name}
+    Preview Link: ${response.tracks.items[0].preview_url}
+    Album: ${response.tracks.items[0].album.name}
+    `
                     );
                     i = response.tracks.items.length;
                 }
