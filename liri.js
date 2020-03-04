@@ -10,7 +10,7 @@ const moment = require("moment");
 const spotify = new Spotify(keys.spotify);
 //calls to identify the user command input at the user parameter input for each task
 const userCommand = process.argv[2];
-const userParameter = process.argv[3];
+const userParameter = process.argv[3].join(", ");
 
 //append function to write the command used and the generated error if any to the log.txt file
 fs.appendFile('log.txt', userCommand + ", ", function (error) {
