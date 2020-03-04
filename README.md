@@ -1,5 +1,5 @@
 # LIRI-node-app
-    A basic node app to perform several simple functions in the terminal.
+A basic node app to perform several simple functions in the terminal.
 
 ## Table of Contents
 
@@ -10,7 +10,7 @@
 * Video Demonstration
 
 ## Application Overview/Use
-    This is a node based application that is designed to show the ability to use node to both take in data, send out data, and log data on a file. The app operates with a series of simple commands followed by user data. The following list contains the commands and any details for use:
+This is a node based application that is designed to show the ability to use node to both take in data, send out data, and log data on a file. The app operates with a series of simple commands followed by user data. The following list contains the commands and any details for use:
 
 ### Commands and instructions
 
@@ -43,6 +43,6 @@ Each command then calls the relevant function and API within each named function
 ## Screenshots
 
 ### Successful concert-this screenshot
-![alt text](https://github.com)
+![alt text](https://github.com/Darkthistle982/liri-node-app/images/concert_this_success.png)
 
 ### Link to Video Demo: https://youtu.be/Cu7SpuojdGo
