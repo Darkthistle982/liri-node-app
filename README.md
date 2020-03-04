@@ -43,6 +43,15 @@ Each command then calls the relevant function and API within each named function
 ## Screenshots
 
 ### Successful concert-this screenshot
-![alt text](https://github.com/Darkthistle982/liri-node-app/images/concert_this_success.png)
+![concert-this screenshot](./images/concert_this_success.png)
+
+### Successful spotify-this-song screenshot
+![spotify-this-song screenshot](./images/spotify_this_success.png)
+
+### Successful movie-this screenshot
+![movie-this screenshot](./images/movie_this_success.png)
+
+### Successful do-what-it-says screenshot
+![do-that-it-says screenshot](./images/do_what_it_says_success.png)
 
 ### Link to Video Demo: https://youtu.be/Cu7SpuojdGo
