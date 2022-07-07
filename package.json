@@ -18,9 +18,9 @@
   },
   "homepage": "https://github.com/Darkthistle982/liri-node-app#readme",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.2",
     "dotenv": "^8.2.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "node-spotify-api": "^1.1.1"
   }
 }
